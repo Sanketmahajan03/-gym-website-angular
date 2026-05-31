@@ -15,7 +15,7 @@ import { environment } from '../../../../environments/environment';
             UNSTOPPABLE <span class="footer__logo-accent">FITNESS</span>
           </p>
           <p class="footer__tagline">
-            Forge your limits every single day.<br />Nashik's most intense gym experience.
+            Forge your limits every single day updated.<br />Nashik's most intense gym experience.
           </p>
           <div class="footer__social" role="list">
             <a
