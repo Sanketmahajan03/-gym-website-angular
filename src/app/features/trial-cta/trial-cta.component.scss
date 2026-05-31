@@ -1,0 +1,117 @@
+.trial-cta {
+  background: linear-gradient(135deg, #ff5500 0%, #cc3d00 50%, #ff0000 100%);
+  overflow: hidden;
+  position: relative;
+}
+
+.trial-cta__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 72px 24px;
+  gap: 32px;
+
+  @media (min-width: 768px) {
+    padding: 80px 48px;
+  }
+}
+
+.trial-cta__content {
+  max-width: 640px;
+  z-index: 1;
+  position: relative;
+}
+
+.trial-cta__eyebrow {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  padding: 4px 14px;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.trial-cta__headline {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: #fff;
+  margin: 0 0 20px;
+
+  span {
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: underline wavy rgba(255, 255, 255, 0.4) 2px;
+  }
+}
+
+.trial-cta__sub {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.05rem;
+  line-height: 1.65;
+  margin: 0 0 32px;
+}
+
+.trial-cta__btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 16px 48px;
+  background: #fff;
+  color: var(--color-primary);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  animation: pulseOrange 2.5s infinite;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+    animation: none;
+  }
+
+  &:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 3px;
+  }
+}
+
+.trial-cta__deco {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  user-select: none;
+  pointer-events: none;
+  flex-shrink: 0;
+
+  @media (min-width: 960px) {
+    display: flex;
+  }
+}
+
+.trial-cta__deco-text {
+  font-family: var(--font-display);
+  font-size: clamp(5rem, 10vw, 9rem);
+  line-height: 0.9;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.08);
+  white-space: nowrap;
+}
+
+@keyframes pulseOrange {
+  0%   { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5); }
+  70%  { box-shadow: 0 0 0 20px rgba(255, 255, 255, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+}

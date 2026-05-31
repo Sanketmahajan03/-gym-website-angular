@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <rect width="800" height="600" fill="#1f1f1f"/>
+  <rect x="300" y="220" width="200" height="160" rx="8" fill="#2a2a2a"/>
+  <circle cx="360" cy="280" r="30" fill="#ff5500" opacity="0.6"/>
+  <polygon points="355,268 355,292 375,280" fill="white" opacity="0.8"/>
+  <text x="400" y="420" text-anchor="middle" font-family="Inter,sans-serif" font-size="16" fill="#aaaaaa">Unstoppable Fitness</text>
+  <text x="400" y="445" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" fill="#555">Nashik, Maharashtra</text>
+</svg>

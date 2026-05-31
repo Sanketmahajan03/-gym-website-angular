@@ -1,0 +1,68 @@
+// ─── CSS Custom Properties (available in all components) ──────────────────────
+:root {
+  --color-primary: #ff5500;
+  --color-primary-dark: #cc3d00;
+  --color-accent: #ff0000;
+  --color-highlight: #ffb800;
+  --color-dark: #111111;
+  --color-dark-alt: #1a1a1a;
+  --color-surface: #1f1f1f;
+  --color-text: #ffffff;
+  --color-text-muted: #aaaaaa;
+  --color-border: #2a2a2a;
+  --color-whatsapp: #25d366;
+
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.25s ease;
+  --transition-slow: 0.4s ease;
+
+  --header-height: 72px;
+}
+
+// ─── SCSS Variables (for use in partials/mixins) ───────────────────────────────
+$primary: #ff5500;
+$primary-dark: #cc3d00;
+$accent: #ff0000;
+$highlight: #ffb800;
+$dark: #111111;
+$dark-alt: #1a1a1a;
+$surface: #1f1f1f;
+$text: #ffffff;
+$text-muted: #aaaaaa;
+$border: #2a2a2a;
+
+$font-display: 'Bebas Neue', sans-serif;
+$font-body: 'Inter', system-ui, sans-serif;
+
+// Spacing scale
+$sp-1: 4px;
+$sp-2: 8px;
+$sp-3: 12px;
+$sp-4: 16px;
+$sp-6: 24px;
+$sp-8: 32px;
+$sp-12: 48px;
+$sp-16: 64px;
+$sp-24: 96px;
+
+// Breakpoints
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+$bp-2xl: 1440px;
+
+// Z-index scale
+$z-base: 1;
+$z-header: 100;
+$z-fab: 150;
+$z-overlay: 200;
+$z-modal: 300;
+$z-tooltip: 400;

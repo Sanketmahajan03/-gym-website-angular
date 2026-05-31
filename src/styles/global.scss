@@ -1,0 +1,198 @@
+// Import order matters – variables first, then everything builds on them
+@use 'variables' as *;
+@use 'mixins' as *;
+@use 'typography';
+@use 'animations';
+
+// ─── Skip Link ────────────────────────────────────────────────────────────────
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 16px;
+  z-index: 9999;
+  padding: 12px 24px;
+  background: var(--color-primary);
+  color: #fff;
+  font-weight: 700;
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+  transition: top var(--transition-fast);
+
+  &:focus {
+    top: 0;
+  }
+}
+
+// ─── Container ────────────────────────────────────────────────────────────────
+.container {
+  @include container;
+}
+
+// ─── Section Utility ──────────────────────────────────────────────────────────
+.section-header {
+  text-align: center;
+  margin-bottom: $sp-12;
+
+  &__eyebrow {
+    @include section-eyebrow;
+  }
+
+  &__title {
+    color: var(--color-text);
+    margin-bottom: $sp-3;
+
+    span {
+      color: var(--color-primary);
+    }
+  }
+
+  &__subtitle {
+    color: var(--color-text-muted);
+    max-width: 580px;
+    margin: 0 auto;
+    font-size: 1.05rem;
+  }
+}
+
+// ─── Global Buttons ───────────────────────────────────────────────────────────
+.btn {
+  @include btn-base;
+
+  &--primary {
+    background: var(--color-primary);
+    color: #fff;
+    border-color: var(--color-primary);
+
+    &:hover:not(:disabled) {
+      background: var(--color-primary-dark);
+      border-color: var(--color-primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(255, 85, 0, 0.35);
+    }
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+  }
+
+  &--secondary {
+    background: transparent;
+    color: var(--color-text);
+    border-color: var(--color-border);
+
+    &:hover:not(:disabled) {
+      border-color: var(--color-primary);
+      color: var(--color-primary);
+    }
+  }
+
+  &--outline {
+    background: transparent;
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+
+    &:hover:not(:disabled) {
+      background: var(--color-primary);
+      color: #fff;
+    }
+  }
+
+  &--lg {
+    padding: $sp-4 $sp-12;
+    font-size: 1rem;
+  }
+
+  &--sm {
+    padding: $sp-2 $sp-4;
+    font-size: 0.75rem;
+  }
+}
+
+// ─── Form Utilities ───────────────────────────────────────────────────────────
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: $sp-2;
+}
+
+.form-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.form-control {
+  width: 100%;
+  padding: $sp-3 $sp-4;
+  background: var(--color-dark);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-text);
+  font-size: 1rem;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+
+  &:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(255, 85, 0, 0.15);
+  }
+
+  &.ng-touched.ng-invalid {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.1);
+  }
+
+  &::placeholder {
+    color: var(--color-text-muted);
+    opacity: 0.6;
+  }
+}
+
+.form-error {
+  font-size: 0.8rem;
+  color: var(--color-accent);
+  display: flex;
+  align-items: center;
+  gap: $sp-1;
+  margin-top: 2px;
+}
+
+// ─── Spinner ──────────────────────────────────────────────────────────────────
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+// ─── Screen Reader Only ───────────────────────────────────────────────────────
+.sr-only {
+  @include sr-only;
+}
+
+// ─── Pill / Badge ─────────────────────────────────────────────────────────────
+.pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px $sp-3;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+
+  &--primary {
+    background: rgba(255, 85, 0, 0.15);
+    color: var(--color-primary);
+    border: 1px solid rgba(255, 85, 0, 0.3);
+  }
+
+  &--highlight {
+    background: rgba(255, 184, 0, 0.15);
+    color: var(--color-highlight);
+    border: 1px solid rgba(255, 184, 0, 0.3);
+  }
+}

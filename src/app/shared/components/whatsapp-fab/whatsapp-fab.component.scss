@@ -1,0 +1,79 @@
+.wa-fab-wrapper {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 150;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.wa-fab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--color-whatsapp);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+  animation: pulseWa 2.4s infinite;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 28px rgba(37, 211, 102, 0.55);
+    animation: none;
+  }
+
+  &:focus-visible {
+    outline: 3px solid var(--color-whatsapp);
+    outline-offset: 3px;
+  }
+
+  &__icon {
+    flex-shrink: 0;
+  }
+
+  // Show tooltip on hover
+  &:hover ~ .wa-fab__tooltip,
+  &:focus-visible ~ .wa-fab__tooltip {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.wa-fab__tooltip {
+  position: absolute;
+  right: calc(100% + 12px);
+  top: 50%;
+  transform: translateY(-50%) translateX(8px);
+  white-space: nowrap;
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+  right: 68px;
+  top: 50%;
+  transform: translateY(-50%) translateX(4px);
+}
+
+.wa-fab-wrapper:hover .wa-fab__tooltip,
+.wa-fab:focus-visible + .wa-fab__tooltip {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+@keyframes pulseWa {
+  0%   { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+  70%  { box-shadow: 0 0 0 16px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
